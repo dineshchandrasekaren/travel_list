@@ -28,7 +28,6 @@ function App() {
           })
         : prev.filter((item) => item.id !== itemId)
     );
-    console.log(allItems);
   };
 
   const filteredItem = sortBy
@@ -52,6 +51,7 @@ function App() {
           const isClear = window.confirm("Are you sure to clear the list?");
           if (isClear) {
             setSortBy(0);
+            setAllItems([]);
           }
         }}
       >
