@@ -9,7 +9,9 @@ const Stats = ({ totalLength, totalPacked }) => {
       {totalLength === 0
         ? "Start adding some items to your packing list 🚀"
         : percentage < 100
-        ? `💼 You have ${totalLength} items on your list, and you already packed ${totalPacked} (${percentage}%)`
+        ? `💼 You have ${totalLength} items on your list, and you already packed ${totalPacked} (${percentage.toFixed(
+            2
+          )}%)`
         : "You got everything! Ready to go ✈️"}
     </div>
   );
