@@ -11,7 +11,16 @@ const Item = ({ item, onChange }) => {
         value={item.checked}
       />
       <span>{item.count}</span>
-      <label htmlFor={item.id}>{item.name}</label>
+      <label
+        htmlFor={item.id}
+        style={{
+          width: "150px",
+          display: "inline-block",
+          overflowWrap: "break-word",
+        }}
+      >
+        {item.name}
+      </label>
       <button id={item.id} onClick={onChange}>
         ❌
       </button>
