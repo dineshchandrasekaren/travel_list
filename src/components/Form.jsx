@@ -1,12 +1,14 @@
 import { useState } from "react";
-const reset = { count: 1, item: "" };
+const reset = { count: 1, name: "" };
 const Form = ({ onSubmit = () => {} }) => {
   const [newItem, setNewItem] = useState(reset);
   const handleChange = ({ target }) => {
     setNewItem((prev) => ({ ...prev, [target.id]: target.value }));
   };
   const handleSubmit = () => {
+    console.log(newItem);
     onSubmit(newItem);
+
     setNewItem(reset);
   };
   return (
@@ -31,11 +33,11 @@ const Form = ({ onSubmit = () => {} }) => {
       <input
         type="text"
         onChange={handleChange}
-        id="item"
-        value={newItem.item}
+        id="name"
+        value={newItem.name}
         placeholder="Item"
       />
-      <button disabled={!newItem.count || !newItem.item} onClick={handleSubmit}>
+      <button disabled={!newItem.count || !newItem.name} onClick={handleSubmit}>
         Add
       </button>
     </div>
